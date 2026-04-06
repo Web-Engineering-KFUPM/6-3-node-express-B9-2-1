@@ -13,13 +13,13 @@ import morgan from "morgan";
 app.use(morgan("dev"));
 
 // TODO 6.1: Create root route "/"
-app.get("/", (reg, res) => {
+app.get("/", (req, res) => {
     res.send("Server is running");
 });
 
 // TODO 6.2: Create "/api/quote" route
-import { getRandomQuote } from "./quotes";
-app.get("/api/quote", (reg, res) => {
+import { getRandomQuote } from "./quotes.js";
+app.get("/api/quote", (req, res) => {
     const quote = getRandomQuote();
     res.json({quote});
 });
